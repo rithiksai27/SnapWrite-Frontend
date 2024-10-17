@@ -11,10 +11,11 @@ export default function PostComp() {
 
   const [post, setPosts] = useState([]);
   const { search } = useLocation();
+  
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const res = await axios.get("http://localhost:3002/api/posts");
+        const res = await axios.get(`${config.url}/api/posts`); // Use the config URL
         console.log(res);
         setPosts(res.data); // Assuming your data is in the 'data' property
       } catch (err) {
@@ -22,10 +23,8 @@ export default function PostComp() {
       }
     };
 
-    fetchPosts(); // Move this inside the useEffect block
-
+    fetchPosts(); // Fetch posts when component mounts
   }, []); // Empty dependency array to run only once when component mounts
-
 
   console.log(post);
 

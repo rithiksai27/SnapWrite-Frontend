@@ -2,6 +2,7 @@ import "./settings.css";
 import { useContext, useState } from "react";
 import { Context } from "../../context/Context";
 import axios from "axios";
+import config from "../../config";  // Import config for backend URL
 
 export default function Settings() {
   const [file, setFile] = useState(null);
@@ -11,7 +12,7 @@ export default function Settings() {
   const [success, setSuccess] = useState(false);
 
   const { user, dispatch } = useContext(Context);
-  const PF = "http://localhost:3002/images/"
+  const PF = `${config.url}/images/`;  // Use backend URL for images path
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -22,6 +23,7 @@ export default function Settings() {
       email,
       password,
     };
+    
     if (file) {
       const data = new FormData();
       const filename = Date.now() + file.name;
@@ -29,17 +31,21 @@ export default function Settings() {
       data.append("file", file);
       updatedUser.profilePic = filename;
       try {
-        await axios.post("/upload", data);
-      } catch (err) {}
+        await axios.post(`${config.url}/upload`, data);  // Use config.url for file upload
+      } catch (err) {
+        console.error("Error uploading file:", err);
+      }
     }
+
     try {
-      const res = await axios.put("/users/" + user._id, updatedUser);
+      const res = await axios.put(`${config.url}/users/${user._id}`, updatedUser);  // Use config.url for user update
       setSuccess(true);
       dispatch({ type: "UPDATE_SUCCESS", payload: res.data });
     } catch (err) {
       dispatch({ type: "UPDATE_FAILURE" });
     }
   };
+
   return (
     <div className="settings">
       <div className="settingsWrapper">
@@ -51,7 +57,7 @@ export default function Settings() {
           <label className="heading">Profile Picture</label>
           <div className="settingsPP">
             <img
-              src={file ? URL.createObjectURL(file) : PF+user.profilePic}
+              src={file ? URL.createObjectURL(file) : PF + user.profilePic}
               alt=""
             />
             <label htmlFor="fileInput">
@@ -96,7 +102,6 @@ export default function Settings() {
           )}
         </form>
       </div>
-      
     </div>
   );
 }

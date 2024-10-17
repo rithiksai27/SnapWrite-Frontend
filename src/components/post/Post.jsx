@@ -8,18 +8,17 @@ export default function Post({ post }) {
       window.location = `/posts/${post_id}`;
     };
 
-
-  const PF = "http://localhost:3002/images/";
+  const PF = `${config.url}/images/`; // Using the config URL
   return (
     <div className="post" onClick={() => handleClick(post._id)}>
       {post.photo && <img className="postImg" src={PF + post.photo} alt="" />}
       <div className="postInfo">
         <div className="postCats">
           {post.categories.map((c) => (
-            <span className="postCat">{c.name}</span>
+            <span className="postCat" key={c._id}>{c.name}</span> // Added key prop for uniqueness
           ))}
         </div>
-        <Link to={`/post/${post._id}`} className="link">
+        <Link to={`/posts/${post._id}`} className="link"> {/* Changed to /posts/${post._id} */}
           <span className="postTitle">{post.title}</span>
         </Link>
         <hr />

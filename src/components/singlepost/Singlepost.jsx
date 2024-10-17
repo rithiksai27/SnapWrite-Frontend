@@ -16,12 +16,12 @@ export default function SinglePost({ postId }) {
   const [updateMode, setUpdateMode] = useState(false);
 
   const { user } = useContext(Context);
-  const PF = "http://localhost:3002/images/";
+  const PF = `${config.url}/images/`; // Update image path to use config
 
   useEffect(() => {
     const getPost = async () => {
       try {
-        const res = await axios.get(`http://localhost:3002/api/posts/${postId}`);
+        const res = await axios.get(`${config.url}/api/posts/${postId}`); // Use the config URL
         setPost(res.data);
         setTitle(res.data.title);
         setDesc(res.data.desc);
@@ -34,10 +34,9 @@ export default function SinglePost({ postId }) {
 
   console.log(post);
 
-
   const handleDelete = async () => {
     try {
-      await axios.delete(`/posts/${post._id}`, {
+      await axios.delete(`${config.url}/api/posts/${post._id}`, {
         data: { username: user.username },
       });
       window.location.replace("/posts");
@@ -48,7 +47,7 @@ export default function SinglePost({ postId }) {
 
   const handleUpdate = async () => {
     try {
-      await axios.put(`/posts/${post._id}`, {
+      await axios.put(`${config.url}/api/posts/${post._id}`, {
         username: user.username,
         title,
         desc,
@@ -120,7 +119,6 @@ export default function SinglePost({ postId }) {
           </button>
         )}
       </div>
-      
     </div>
   );
 }

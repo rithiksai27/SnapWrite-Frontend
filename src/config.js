@@ -1,5 +1,5 @@
-const config =
-{
-url:'http://localhost:{3002}'
-};
-export default config;
+const config = {
+    url: 'https://snapwrite-backend.onrender.com'  
+  };
+  export default config;
+  

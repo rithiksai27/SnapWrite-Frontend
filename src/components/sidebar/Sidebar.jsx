@@ -1,14 +1,16 @@
 import "./sidebar.css";
 import { useState, useEffect } from 'react';
 import axios from "axios";
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom";
+import config from '../../config'; // Import config file
+
 export default function Sidebar() {
   const [cats, setCats] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get("/categories");
+        const res = await axios.get(`${config.url}/categories`); // Use the config URL
         setCats(res.data);
       } catch (err) {
         console.error("Error fetching categories:", err);
@@ -16,7 +18,6 @@ export default function Sidebar() {
     };
 
     fetchData(); // Call the asynchronous function inside useEffect
-
   }, []); // Empty dependency array to run only once when component mounts
 
   return (
@@ -30,9 +31,8 @@ export default function Sidebar() {
         <span className="sidebarTitle">Categories</span>
         <ul className="sidebarList">
           {cats.map((c) => (
-            <Link to={`/?cat=${c.name}`} className="link" >
-          <li key={c.id} className="sidebarListItem">{c.name}</li>
-
+            <Link to={`/?cat=${c.name}`} className="link" key={c.id}>
+              <li className="sidebarListItem">{c.name}</li>
             </Link>
           ))}
         </ul>

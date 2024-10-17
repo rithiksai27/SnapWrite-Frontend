@@ -18,20 +18,25 @@ export default function Write() {
       desc,
     };
     if (file) {
-      const data =new FormData();
+      const data = new FormData();
       const filename = Date.now() + file.name;
       data.append("name", filename);
       data.append("file", file);
       newPost.photo = filename;
       try {
-        await axios.post("/upload", data);
-      } catch (err) {}
+        await axios.post(`${config.url}/upload`, data);  // Use config.url for file upload
+      } catch (err) {
+        console.error("Error uploading file:", err);
+      }
     }
     try {
-      const res = await axios.post("/posts", newPost);
+      const res = await axios.post(`${config.url}/posts`, newPost);  // Use config.url for post creation
       window.location.replace("/posts/" + res.data._id);
-    } catch (err) {}
+    } catch (err) {
+      console.error("Error creating post:", err);
+    }
   };
+
   return (
     <div className="write">
       {file && (
@@ -53,7 +58,7 @@ export default function Write() {
             placeholder="Title"
             className="writeInput"
             autoFocus={true}
-            onChange={e=>setTitle(e.target.value)}
+            onChange={e => setTitle(e.target.value)}
           />
         </div>
         <div className="writeFormGroup">
@@ -61,7 +66,7 @@ export default function Write() {
             placeholder="Tell your story..."
             type="text"
             className="writeInput writeText"
-            onChange={e=>setDesc(e.target.value)}
+            onChange={e => setDesc(e.target.value)}
           ></textarea>
         </div>
         <button className="writeSubmit" type="submit">

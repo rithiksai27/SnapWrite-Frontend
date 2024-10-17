@@ -2,6 +2,7 @@ import axios from "axios";
 import { useContext, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../../context/Context";
+import config from "../../config";  // Import the config file for the backend URL
 import "./login.css";
 
 export default function Login() {
@@ -13,7 +14,7 @@ export default function Login() {
     e.preventDefault();
     dispatch({ type: "LOGIN_START" });
     try {
-      const res = await axios.post("/auth/login", {
+      const res = await axios.post(`${config.url}/auth/login`, {  // Use config.url here
         username: userRef.current.value,
         password: passwordRef.current.value,
       });
