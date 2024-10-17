@@ -1,12 +1,12 @@
 import axios from "axios";
 import { useContext, useEffect, useState } from "react";
-import { useLocation, Link } from "react-router-dom";
+import { Link } from "react-router-dom"; // Import useLocation
 import { Context } from "../../context/Context";
 import config from "../../config"; // Importing config for dynamic URLs
 import "./singlePost.css";
 
 export default function SinglePost({ postId }) {
-  const location = useLocation();
+  // Removed the location variable since it's not used
   const [post, setPost] = useState({});
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");

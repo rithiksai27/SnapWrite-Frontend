@@ -26,7 +26,13 @@ export default function Home() {
     <>
       <Header />
       <div className="home">
-        {/* You can render the Posts component here with the posts data */}
+        {/* Map over the posts array and render each post */}
+        {posts.map((post) => (
+          <div key={post._id} className="post">
+            <h2>{post.title}</h2>
+            <p>{post.desc}</p>
+          </div>
+        ))}
       </div>
     </>
   );

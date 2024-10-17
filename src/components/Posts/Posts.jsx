@@ -7,7 +7,8 @@ import config from '../../config'; // Import config file
 
 export default function PostComp() {
   const [post, setPosts] = useState([]);
-  const { search } = useLocation();
+  // Removed unused search variable
+  useLocation(); // Call useLocation() to keep the logic, if needed for future use
   
   useEffect(() => {
     const fetchPosts = async () => {
