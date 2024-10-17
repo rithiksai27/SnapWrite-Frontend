@@ -1,34 +1,15 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import config from "../../config"; // Importing the config
+import "./single.css"
+import SinglePost from "../../components/singlepost/Singlepost";
+import { useParams } from 'react-router-dom';
 
-export default function SinglePost({ postId }) {
-  const [post, setPost] = useState(null);
+export default function Single() {
 
-  useEffect(() => {
-    const fetchPost = async () => {
-      try {
-        const res = await axios.get(`${config.url}/posts/${postId}`); // Using config.url
-        setPost(res.data);
-      } catch (err) {
-        console.error("Error fetching post:", err);
-      }
-    };
+  const { id } = useParams();
 
-    fetchPost();
-  }, [postId]);
 
   return (
-    <div className="singlePost">
-      {post ? (
-        <>
-          <h1>{post.title}</h1>
-          <p>{post.content}</p>
-          {/* Add other post details here */}
-        </>
-      ) : (
-        <p>Loading...</p>
-      )}
+    <div className="single">
+        <SinglePost postId={id}/>
     </div>
-  );
+  )
 }
