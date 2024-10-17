@@ -1,20 +1,16 @@
 import axios from "axios";
 import { useContext, useEffect, useState } from "react";
-import { useLocation } from "react-router";
-import { Link } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import { Context } from "../../context/Context";
 import config from "../../config"; // Importing config for dynamic URLs
 import "./singlePost.css";
 
 export default function SinglePost({ postId }) {
   const location = useLocation();
-  const path = location.pathname.split("/")[2];
-
   const [post, setPost] = useState({});
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
   const [updateMode, setUpdateMode] = useState(false);
-
   const { user } = useContext(Context);
   const PF = `${config.url}/images/`; // Update image path to use config
 

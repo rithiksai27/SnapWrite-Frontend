@@ -1,9 +1,7 @@
-
-import React, { useEffect } from 'react';
+import React from 'react';
 import "./header.css";
 
 export default function Header() {
-  
   return (
     <div className="header">
       <div className="headerTitles">
@@ -29,7 +27,7 @@ export default function Header() {
           <div className="carousel-item">
             <img src="https://images.unsplash.com/photo-1703876087817-010eef3e0d59?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" className="d-block w-100" alt="..." />
           </div>
-           <div className="carousel-item">
+          <div className="carousel-item">
             <img src="https://images.unsplash.com/photo-1611628131746-3250d4c0fd38?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" className="d-block w-100" alt="..." />
           </div>
           <div className="carousel-item">
@@ -44,7 +42,6 @@ export default function Header() {
           <div className="carousel-item">
             <img src="https://images.unsplash.com/photo-1660551552377-b0207f194ae2?q=80&w=3474&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" className="d-block w-100" alt="..." />
           </div>
-         
         </div>
         <button className="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
           <span className="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -66,68 +63,20 @@ export default function Header() {
         <h2>Track Your Changes</h2>
       </div>
 
-      <div class="storyForm">
-  <div class="storyInner">
-    <h1>Coordinate day-to-day tasks</h1>
-    <h3>Utilize the dashboard for overseeing your publishing schedule and categories, adjusting contributor preferences, and monitoring analytics.</h3>
-    <p>Evaluate blog traffic through analytics, revealing which posts resonate the most with readers and informing strategic content adjustments.</p>
-    <p>Set personalized permissions for contributors and schedule posts to publish on specific dates, transforming your blog into a well-managed publication.</p>
-    <p>Organize, tag, and highlight posts to enhance user experience, making it effortless for readers to discover and explore new and relevant content.</p>
-  </div>
-</div>
-
-      <div className="captionThis">
-        <h2>Connect, Share, Engage</h2>
+      <div className="storyForm">
+        <div className="storyInner">
+          <h1>Coordinate day-to-day tasks</h1>
+          <h3>Utilize the dashboard for overseeing your publishing schedule and categories, adjusting contributor preferences, and monitoring project progress.</h3>
+        </div>
+        <div className="storyInner">
+          <h1>Track comments and changes</h1>
+          <h3>View live edits made by other contributors and leave your own notes directly in the draft.</h3>
+        </div>
+        <div className="storyInner">
+          <h1>Save your work easily</h1>
+          <h3>Your drafts are automatically saved as you work, allowing you to access them anytime, anywhere.</h3>
+        </div>
       </div>
-
-      <div class="description-container">
-  <div class="card">
-    <h2 class="card-title">Out there, your audience is waiting.</h2>
-    <p class="card-text">
-    Use it to connect with people who might be interested in what you have to offer.
-    </p>
-  </div>
-  <div class="card">
-    <h2 class="card-title">Begin your website today.</h2>
-    <p class="card-text">
-    Build a Snapwrite.com website to spread your thoughts globally.
-    </p>
-  </div>
-  <div class="card">
-    <h2 class="card-title">Get your message across with a newsletter.</h2>
-    <p class="card-text">
-    Make your Snapwrite.com site a newsletter and engage with your readers.
-    </p>
-  </div>
-  <div class="card">
-    <h2 class="card-title">Interact with your audience.</h2>
-    <p class="card-text">
-    The Reader helps you stay updated and connect with others.
-    </p>
-  </div>
-  <div class="card">
-    <h2 class="card-title">Share the news</h2>
-    <p class="card-text">
-    Use Blaze to extend your social media reach and highlight your posts.
-    </p>
-  </div>
-  <div class="card">
-    <h2 class="card-title">Inform them of the latest developments
-</h2>
-    <p class="card-text">
-    RSS lets your audience easily follow your updates and stay current.
-    </p>
-  </div>
-</div>
-
-
-      <div className="captionThis">
-        <h2>Empower, Inspire, Share</h2>
-      </div>
-
-      
-      
-
     </div>
   );
 }

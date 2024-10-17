@@ -11,8 +11,8 @@ export default function Home() {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      try {  
-        const res = await axios.get(`${config.url}/posts${search}`);  // Use config.url here
+      try {
+        const res = await axios.get(`${config.url}/posts${search}`); // Use config.url here
         setPosts(res.data); // Assuming your data is in the 'data' property
       } catch (err) {
         console.error("Error fetching posts:", err);
@@ -26,7 +26,7 @@ export default function Home() {
     <>
       <Header />
       <div className="home">
-        {/* <Posts posts={posts} />  */}
+        {/* You can render the Posts component here with the posts data */}
       </div>
     </>
   );
