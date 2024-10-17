@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import axios from 'axios';
 import Post from '../../components/post/Post';
 import "./posts.css";
+import config from '../../config'; // Import config file
 
 export default function PostComp() {
   const [posts, setPosts] = useState([]);
@@ -11,8 +12,8 @@ export default function PostComp() {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const res = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/posts`);
-        console.log(res);
+        // Use the dynamic backend URL from config
+        const res = await axios.get(`${config.url}/api/posts${search}`);
         setPosts(res.data); // Assuming your data is in the 'data' property
       } catch (err) {
         console.error("Error fetching posts:", err);
@@ -20,7 +21,7 @@ export default function PostComp() {
     };
 
     fetchPosts(); // Call the fetchPosts function
-  }, []); // Empty dependency array to run only once when component mounts
+  }, [search]); // Dependency array includes 'search' to update when search query changes
 
   console.log(posts);
 

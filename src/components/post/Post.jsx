@@ -1,13 +1,14 @@
 import "./post.css";
 import { Link } from "react-router-dom";
+import config from "../../config"; // Importing the config file
 
 export default function Post({ post }) {
   const handleClick = (post_id) => {
-    window.location = `/posts/${post_id}`;
+    window.location = `${config.url}/posts/${post_id}`; // Using config.url for the backend URL
   };
 
-  // Use the backend URL from environment variables
-  const PF = process.env.REACT_APP_BACKEND_URL + "/images/";
+  // Use the backend URL from the config file instead of environment variables
+  const PF = `${config.url}/images/`; // Using config.url for the image path
 
   return (
     <div className="post" onClick={() => handleClick(post._id)}>

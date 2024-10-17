@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import config from "../../config"; // Importing the config
 
 export default function SinglePost({ postId }) {
   const [post, setPost] = useState(null);
@@ -7,7 +8,7 @@ export default function SinglePost({ postId }) {
   useEffect(() => {
     const fetchPost = async () => {
       try {
-        const res = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/posts/${postId}`);
+        const res = await axios.get(`${config.url}/posts/${postId}`); // Using config.url
         setPost(res.data);
       } catch (err) {
         console.error("Error fetching post:", err);

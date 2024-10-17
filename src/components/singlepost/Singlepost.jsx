@@ -3,6 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import { useLocation } from "react-router";
 import { Link } from "react-router-dom";
 import { Context } from "../../context/Context";
+import config from "../../config"; // Importing config for dynamic URLs
 import "./singlePost.css";
 
 export default function SinglePost({ postId }) {
@@ -15,12 +16,12 @@ export default function SinglePost({ postId }) {
   const [updateMode, setUpdateMode] = useState(false);
 
   const { user } = useContext(Context);
-  const PF = `${process.env.REACT_APP_BACKEND_URL}/images/`;
+  const PF = `${config.url}/images/`; // Use config.url for the image path
 
   useEffect(() => {
     const getPost = async () => {
       try {
-        const res = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/posts/${postId}`);
+        const res = await axios.get(`${config.url}/api/posts/${postId}`); // Dynamic URL
         setPost(res.data);
         setTitle(res.data.title);
         setDesc(res.data.desc);
@@ -33,7 +34,7 @@ export default function SinglePost({ postId }) {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`${process.env.REACT_APP_BACKEND_URL}/api/posts/${post._id}`, {
+      await axios.delete(`${config.url}/api/posts/${post._id}`, { // Dynamic URL for delete
         data: { username: user.username },
       });
       window.location.replace("/posts");
@@ -44,7 +45,7 @@ export default function SinglePost({ postId }) {
 
   const handleUpdate = async () => {
     try {
-      await axios.put(`${process.env.REACT_APP_BACKEND_URL}/api/posts/${post._id}`, {
+      await axios.put(`${config.url}/api/posts/${post._id}`, { // Dynamic URL for update
         username: user.username,
         title,
         desc,

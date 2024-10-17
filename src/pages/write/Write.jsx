@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import "./write.css";
 import axios from "axios";
 import { Context } from "../../context/Context";
+import config from "../../config"; // Importing the config
 
 export default function Write() {
   const [title, setTitle] = useState("");
@@ -25,14 +26,14 @@ export default function Write() {
       newPost.photo = filename;
 
       try {
-        await axios.post(`${process.env.REACT_APP_BACKEND_URL}/upload`, data);
+        await axios.post(`${config.url}/upload`, data); // Using config.url
       } catch (err) {
         console.error("Error uploading file:", err);
       }
     }
 
     try {
-      const res = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/posts`, newPost);
+      const res = await axios.post(`${config.url}/posts`, newPost); // Using config.url
       window.location.replace("/posts/" + res.data._id);
     } catch (err) {
       console.error("Error creating post:", err);

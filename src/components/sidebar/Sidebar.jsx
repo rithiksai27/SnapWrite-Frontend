@@ -2,6 +2,7 @@ import "./sidebar.css";
 import { useState, useEffect } from 'react';
 import axios from "axios";
 import { Link } from "react-router-dom";
+import config from "../../config"; // Import config for dynamic URLs
 
 export default function Sidebar() {
   const [cats, setCats] = useState([]);
@@ -9,7 +10,7 @@ export default function Sidebar() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/categories`);
+        const res = await axios.get(`${config.url}/categories`); // Use config.url for dynamic URL
         setCats(res.data);
       } catch (err) {
         console.error("Error fetching categories:", err);
