@@ -1,0 +1,106 @@
+.settings{
+    display: flex;
+}
+.settingsWrapper{
+    flex: 9;
+    padding: 20px;
+
+}
+.settingsTitle{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.settingsUpdateTitle{
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: rgb(0, 59, 101);
+    
+}
+.settingsDeleteTitle{
+    color: rgb(189, 4, 38);
+    font-size: 15px;
+    cursor: pointers;
+}
+.settingsForm{
+    display: flex;
+    flex-direction: column;
+
+}
+.settingsPP{
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+
+}
+.settingsPP > img{
+    width: 70px;
+    height: 70px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+.settingsPPIcon {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: rgb(0, 191, 244);
+    color: rgb(154, 6, 6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, width 0.3s ease, height 0.3s ease, margin-left 0.3s ease;
+}
+
+.settingsPPIcon:hover {
+    background-color: rgb(150, 255, 65);
+    width: 30px; 
+    height: 30px; 
+    margin-left: 15px;
+}
+
+
+.settingsForm > label{
+    font-size: 20px;
+    margin-top: 20px;
+
+}
+.settingsForm > input{
+    color: gray;
+    margin: 10px 0;
+    height: 30px;
+    border: none;
+    border-bottom: 1px solid lightgray;
+}
+.settingsForm > input:focus {
+  outline: none;
+  box-shadow: none;
+}
+.settingsSubmit {
+    width: 150px;
+    align-self: center;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    background-color: teal;
+    padding: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease; 
+}
+
+.settingsSubmit:hover {
+    background-color: rgb(169, 91, 133);
+    color: rgb(255, 255, 255);
+    transform: scale(1.1); 
+}
+
+.userInput{
+    background-color: rgb(201, 230, 233);
+}
+.heading{
+    background-color: rgb(201, 230, 233);
+    color: black;
+  
+}

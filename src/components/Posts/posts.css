@@ -1,0 +1,19 @@
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+ }
+
+ .posts {
+    width: 100%;
+ }
+
+ .posts-in {
+   width: 90%;
+   margin: auto;
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+   justify-content: space-around;
+   padding: 4rem 0rem;
+ }  

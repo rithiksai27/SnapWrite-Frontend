@@ -1,0 +1,116 @@
+.top {
+    width: 100%;
+    height: 50px;
+    background-color: rgb(201, 230, 233);
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    font-family: 'Josefin Sans', sans-serif;
+    z-index: 999;
+}
+
+.topLeft, .topRight {
+    flex: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.topIcon {
+    font-size: 24px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.topIcon:hover {
+    transform: scale(1.2);
+}
+
+.fab.fa-facebook-square,
+.fab.fa-twitter-square,
+.fab.fa-github,
+.fab.fa-instagram-square {
+    font-size: 36px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.fab.fa-facebook-square:hover,
+.fab.fa-twitter-square:hover,
+.fab.fa-github:hover,
+.fab.fa-instagram-square:hover {
+    transform: scale(1.2);
+}
+
+.topCenter {
+    flex: 6;
+    perspective: 1000px;
+}
+
+.topIcon {
+    font-size: 20px;
+    margin-right: 10px;
+    color: #444;
+    cursor: pointer;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateY(0deg);
+    animation: fadedRotate 5s backwards linear;
+    opacity: 2;
+}
+
+li {
+    animation: fadedRotate 3s linear infinite;
+}
+
+.topImg {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.topList {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.topListItem {
+    margin-right: 20px;
+    font-size: 25px;
+    font-weight: 700;
+    cursor: pointer;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateY(0deg);
+    opacity: 2;
+    transition: transform 0.3s ease-in-out; 
+}
+
+.topListItem:hover {
+    transform: scale(1.2);
+}
+
+
+.topSearchIcon {
+    font-size: 18px;
+    color: #666;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.topListItem .btn {
+    color: #17472f;
+    font-weight: 900;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.topListItem .btn:hover {
+    color: black;
+    background-color: rgb(86, 189, 77);
+}

@@ -1,0 +1,80 @@
+.outer {
+  margin: 0; /* Remove default margin */
+  font-family: Arial, sans-serif; /* Set a default font */
+  background-image: url('https://images.unsplash.com/photo-1506875644286-0fa3dc4df91f?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-size: cover; /* Cover the entire page */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+}
+.intro {
+  padding: 20px; /* Padding around intro */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+.aboutusdesign {
+  display: flex;
+  justify-content: center;
+  font-size: 5rem; /* Larger font size for emphasis */
+  flex-direction: row;
+  letter-spacing: 0.1em;
+  margin-top: 2%;
+  color: #FFDD57; /* Bright yellow for contrast */
+  font-weight: bold; /* Bold text */
+}
+
+.short-description {
+  text-align: center;
+  padding: 30px; /* Increased padding */
+  width: 80%; /* Adjusted width */
+  border-radius: 10px; /* More rounded corners */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Deeper shadow */
+  margin: 20px auto; /* Centered with auto margin */
+  font-weight: bold; /* Bold text */
+}
+
+.about-title {
+  color: #c0d985; /* Change this to your desired color */
+  font-size: 4rem;
+}
+
+.heading-subtitle {
+  color: #3bceff;
+  font-size: 2rem;
+}
+
+.info-box {
+  text-align: center;
+  padding: 40px; /* Increased padding for larger boxes */
+  border-radius: 8px; /* Rounded corners */
+  margin: 30px auto; /* Centered with auto margin */
+  width: 80%; /* Adjusted width for boxes */
+  box-shadow: 0 8px 16px rgba(0, 255, 225, 0.2); /* Subtle shadow for depth */
+  font-size: 1.5rem; /* Increased font size */
+  font-weight: bold; /* Bold text */
+  color: #47ff81; /* Tomato color for vibrant contrast */
+}
+
+.info-text {
+  color: #e2a200; /* Gold color for info text */
+  font-size: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h3 {
+  text-align: center;
+  font-family: 'Cinzel', serif;
+  font-size: 2.5rem; /* Increased size for headers */
+  color: #FFD700; /* Gold color for headers */
+  letter-spacing: 0.1em;
+  margin-top: 40px; /* Space above headings */
+}
+#our{
+  color: #FFD700;
+}
+#what{
+  color: #e2a200;
+}
+#join{
+  color: #FFDD57;
+}

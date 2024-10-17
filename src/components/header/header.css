@@ -1,0 +1,222 @@
+.header {
+    margin-top: 60px;
+  }
+  
+  .headerTitles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Lora', serif;
+    color: #444;
+  }
+  
+  .headerTitlelg {
+    position: absolute;
+    top: 20px;
+    font-size: 100px;
+    margin-top: 30px;
+    color: rgb(25, 73, 131);
+    transform: rotate(360deg);
+    animation: rotateIn 4s ease-in-out 1s forwards;
+  }
+  
+  @keyframes rotateIn {
+    from {
+      transform: rotate(360deg);
+    }
+    to {
+      transform: rotate(0);
+    }
+  }
+  
+  .carousel-item {
+    width: 100%;
+    height: 650px;
+    margin-top: 80px;
+    object-fit: cover;
+ 
+  }
+
+  
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-color: rgb(76, 124, 0);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .carousel-control-prev-icon:hover,
+  .carousel-control-next-icon:hover {
+    transform: scale(1.4);
+  }
+  
+  .videobit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    background-color: rgb(76, 69, 69);
+    margin-top: 6vh;
+  }
+  
+  .videobit video {
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
+  }
+  
+  .captionThis {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Lora', serif;
+    margin-top: 6vh;
+    color: rgb(68, 1, 93);
+    animation: rotateAnimation 16s ease-in-out;
+  }
+  
+  h2 {
+    font-size: 140px;
+    cursor: pointer;
+    color: rgb(74, 43, 0);
+    transform: scale(1);
+    transition: color 2s ease, transform 2s ease;
+  }
+  
+  h2:hover {
+    color: rgb(63, 0, 87);
+    transform: scale(1.2);
+  }
+  
+  @keyframes rotateAnimation {
+    0% {
+      transform: rotateX(90deg);
+      opacity: 0;
+    }
+    100% {
+      transform: rotateX(0deg);
+      opacity: 1;
+    }
+  }
+  
+  .storyForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    width: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1657215373362-3183c0495f85?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: center;
+    margin-top: 6rem;
+
+  }
+  
+  .storyInner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 4rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 100%;
+    animation: fadeIn 8s ease-out;
+    background: linear-gradient(to bottom, #f9f9f9, #fff);
+  }
+  
+  h1, h3 {
+    text-align: center;
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  }
+  h1:hover, h3:hover {
+    color: #444;
+  }
+  
+  h1 {
+    font-size: 3.5rem;
+    color: #333;
+    animation: colorChange 8s ease-in-out infinite;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+    color: #666;
+    animation: colorChange 8s ease-in-out infinite;
+  }
+  
+  p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #333;
+    text-align: center;
+    animation: fadeIn 8s ease-out 0.5s;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes colorChange {
+    0%, 100% {
+      color: #333;
+    }
+    50% {
+      color: #666;
+    }
+  }
+
+  .description-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+    background-color: #f7f7f7;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  .card {
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 5px;
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+  }
+  
+  .card:hover {
+    transform: translatex(5px);
+    box-shadow: 0 6px 10px rgba(1, 115, 222, 0.15);
+  }
+  
+  .card:hover .card-title {
+    color: #487bd3;
+  }
+  
+  .card-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    transition: color 0.3s ease-out;
+  }
+  
+  .card-text {
+    font-size: 20px;
+    line-height: 1.5;
+    color: #4a4a4a;
+    opacity: 0.8;
+  transition: color 0.3s ease-out, transform 0.3s ease-out;
+  }
+  .card:hover .card-text {
+    color: #076159;
+    transform: translateY(-5px);
+  }
+
+  
