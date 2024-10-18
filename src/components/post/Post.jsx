@@ -8,7 +8,7 @@ export default function Post({ post }) {
       window.location = `/posts/${post_id}`;
     };
 
-  const PF = `${config.url}/images/`; // Using the config URL
+  const PF = `${config.url}/api/images/`; // Using the config URL
   return (
     <div className="post" onClick={() => handleClick(post._id)}>
       {post.photo && <img className="postImg" src={PF + post.photo} alt="" />}

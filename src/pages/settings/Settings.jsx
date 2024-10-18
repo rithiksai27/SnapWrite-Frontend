@@ -12,7 +12,7 @@ export default function Settings() {
   const [success, setSuccess] = useState(false);
 
   const { user, dispatch } = useContext(Context);
-  const PF = `${config.url}/images/`;  // Use backend URL for images path
+  const PF = `${config.url}/api/images/`;  // Use backend URL for images path
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -31,14 +31,14 @@ export default function Settings() {
       data.append("file", file);
       updatedUser.profilePic = filename;
       try {
-        await axios.post(`${config.url}/upload`, data);  // Use config.url for file upload
+        await axios.post(`${config.url}/api/upload`, data);  // Use config.url for file upload
       } catch (err) {
         console.error("Error uploading file:", err);
       }
     }
 
     try {
-      const res = await axios.put(`${config.url}/users/${user._id}`, updatedUser);  // Use config.url for user update
+      const res = await axios.put(`${config.url}/api/users/${user._id}`, updatedUser);  // Use config.url for user update
       setSuccess(true);
       dispatch({ type: "UPDATE_SUCCESS", payload: res.data });
     } catch (err) {

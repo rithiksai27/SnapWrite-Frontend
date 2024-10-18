@@ -24,13 +24,13 @@ export default function Write() {
       data.append("file", file);
       newPost.photo = filename;
       try {
-        await axios.post(`${config.url}/upload`, data);  // Use config.url for file upload
+        await axios.post(`${config.url}/api/upload`, data);  // Use config.url for file upload
       } catch (err) {
         console.error("Error uploading file:", err);
       }
     }
     try {
-      const res = await axios.post(`${config.url}/posts`, newPost);  // Use config.url for post creation
+      const res = await axios.post(`${config.url}/api/posts`, newPost);  // Use config.url for post creation
       window.location.replace("/posts/" + res.data._id);
     } catch (err) {
       console.error("Error creating post:", err);

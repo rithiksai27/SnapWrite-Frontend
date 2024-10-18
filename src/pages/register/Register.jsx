@@ -2,7 +2,7 @@ import "./register.css";
 import { Link } from "react-router-dom";
 import { useState } from 'react';
 import axios from "axios";
-import config from "../../config"; // Adjust the path based on your folder structure
+import config from "../config"; // Adjust the path based on your folder structure
 
 export default function Register() {
   const [username, setUsername] = useState("");
@@ -14,8 +14,8 @@ export default function Register() {
     e.preventDefault();
     setError(false);
     try {
-      const res = await axios.post(`${config.url}/auth/register`, {
-        username,
+      const res = await axios.post(`${config.url}/api/auth/register`, {
+        username, 
         email,
         password,
       });

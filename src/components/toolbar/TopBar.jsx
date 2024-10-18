@@ -6,7 +6,7 @@ import "./topbar.css";
 
 export default function TopBar() {
   const { user, dispatch } = useContext(Context);
-  const PF = `${config.url}/images/`; // Updated image path to use config
+  const PF = `${config.url}/api/images/`; // Updated image path to use config
   const openSocialMedia = (url) => {
     window.open(url, '_blank'); // Opens the link in a new tab
   };

@@ -14,7 +14,7 @@ export default function Login() {
     e.preventDefault();
     dispatch({ type: "LOGIN_START" });
     try {
-      const res = await axios.post(`${config.url}/auth/login`, {  // Use config.url here
+      const res = await axios.post(`${config.url}/api/auth/login`, {  // Use config.url here
         username: userRef.current.value,
         password: passwordRef.current.value,
       });

@@ -10,7 +10,7 @@ export default function Sidebar() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`${config.url}/categories`); // Use the config URL
+        const res = await axios.get(`${config.url}/api/categories`); // Use the config URL
         setCats(res.data);
       } catch (err) {
         console.error("Error fetching categories:", err);
